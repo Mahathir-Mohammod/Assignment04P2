@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Hunter Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="c.css">
 </head>
-<body>
-    
+<body class="bg-slate-50 min-h-screen p-4 md:p-8">
+
+    <main class="max-w-5xl mx-auto">
+
+        <h1 class="text-2xl font-bold mb-6">Job Application Tracker</h1>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+
+                <p class="text-gray-500 font-medium">Total</p>
+
+                <h2 id="total-count" class="text-3xl font-bold">8</h2>
+
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+
+                <p class="text-gray-500 font-medium text-green-600">Interview</p>
+
+                <h2 id="interview-count" class="text-3xl font-bold">0</h2> 
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+
+                <p class="text-gray-500 font-medium text-red-500">Rejected</p>
+
+                <h2 id="rejected-count" class="text-3xl font-bold">0</h2>
+
+            </div>
+
+        </section>
+        <div class="flex justify-between items-center mb-4">
+
+            <h3 class="text-xl font-bold">Available Jobs</h3>
+
+            <span class="text-gray-500"><span id="job-count-label">8</span> of 8 jobs</span>
+
+        </div>
+        <div role="tablist" class="tabs tabs-boxed mb-6 bg-transparent gap-2">
+            <a role="tab" class="tab tab-active" onclick="filterJobs('all', this)">All</a>
+            <a role="tab" class="tab" onclick="filterJobs('interview', this)">Interview</a>
+            <a role="tab" class="tab" onclick="filterJobs('rejected', this)">Rejected</a>
+        </div>
+
+        <div id="job-container" class="space-y-4"></div>
+
+    </main>
+
+    <script src="JobTracke.js"></script>
 </body>
 </html>
