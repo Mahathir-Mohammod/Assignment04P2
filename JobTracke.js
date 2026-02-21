@@ -77,8 +77,6 @@ function AllJobs(filter = 'all') {
         const isRejected = job.status === 'rejected';
         
         let borderClass = "border-gray-100";
-        if (isInterview) borderClass = "border-green-500 ring-1 ring-green-500";
-        if (isRejected) borderClass = "border-red-500 ring-1 ring-red-500";
 
         const card = document.createElement('div');
         card.className = `bg-white p-6 rounded-lg border shadow-sm flex flex-col gap-2 relative transition-all duration-300 ${borderClass}`;
